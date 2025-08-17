@@ -1,0 +1,10 @@
+node_modules
+.expo
+app/.expo
+app/dist
+api/bin
+.DS_Store
+
+CLAUDE.md
+.claude
+.serena

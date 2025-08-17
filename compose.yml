@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  api-dev:
+    build:
+      context: ./api
+      dockerfile: build/docker/Dockerfile.dev
+    working_dir: /app
+    volumes:
+      - ./api:/app
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"

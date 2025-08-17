@@ -1,0 +1,16 @@
+FROM golang:1.24
+
+WORKDIR /app
+ENV GOTOOLCHAIN=auto
+
+# ホットリロード
+RUN go install github.com/air-verse/air@latest
+
+# Air設定ファイルだけ先に入れとく（なくてもOK）
+COPY .air.toml /app/.air.toml
+
+# エントリポイントスクリプトをコピー
+COPY scripts/dev-entrypoint.sh /usr/local/bin/dev-entrypoint
+RUN chmod +x /usr/local/bin/dev-entrypoint
+
+CMD ["dev-entrypoint"]
