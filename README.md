@@ -73,7 +73,7 @@ npx expo login
 
 ```bash
 # Metro Bundlerを起動
-npx expo start --dev-client
+npx expo start  --tunnel --dev-client
 ```
 
 #### 7. 実機で確認
